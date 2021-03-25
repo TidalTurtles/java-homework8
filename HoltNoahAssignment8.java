@@ -15,9 +15,47 @@ public class HoltNoahAssignment8 {
 		 * then some weird dog thing, still unsure about that part.
 		 */
 
-	}
+		// starting variables and arrays
+		int[] gradesClass1 = {40, 55, 70, 58, 82};
+		int[] gradeClass2 = {91, 76, 68, 94, 84, 71, 65, 88};
+		int highestGrade = 0;
+		int allGrades = 0;
+		double averageGrade;
+		
+		
+	} //main
+	
+	public static void processGrades(int[] grades) {
+		
+		
+		
+	} //processGrades
+	
+	public static int highestGrade(int[] grades) {
+		
+		
+		
+	} //highestGrade
+	
+	public static double averageGrade (int[] grades) {
+		
+		
+		
+	} //averageGrade
+	
+	public static void letterGrade(int[] grades, char[] letterGrades, int highestGrade) {
+		
+		
+		
+	} // letterGrade
+	
+	public static void displayGrades(int[] grades, char[] letterGrades, int highestGrade, double averageGrade) {
+		
+		
+		
+	} // displayGrades
 
-}
+} //assignment8
 
 //weird dog thing as mentioned before
 
@@ -32,30 +70,30 @@ class Dog {
 		this.name = name;
 		this.bark = bark;
 		
-	}
+	} //dog
 	
 	public String getName() {
 		
 		return name;
 		
-	}
+	} //getName
 	
 	public void setName(String name) {
 		
 		this.name = name;
 		
-	}
+	} //setName
 	
 	public String getBark() {
 		
 		return bark;
 		
-	}
+	} //getBark
 	
 	public void setBark(String bark) {
 		
 		this.bark = bark;
 		
-	}
+	} //setBark
 	
-}
+} // dog
