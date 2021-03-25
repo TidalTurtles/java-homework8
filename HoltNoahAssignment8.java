@@ -16,11 +16,45 @@ public class HoltNoahAssignment8 {
 		 */
 
 		// starting variables and arrays
+		int[] grades;
 		int[] gradesClass1 = {40, 55, 70, 58, 82};
-		int[] gradeClass2 = {91, 76, 68, 94, 84, 71, 65, 88};
-		int highestGrade = 0;
-		int allGrades = 0;
-		double averageGrade;
+		int[] gradesClass2 = {91, 76, 68, 94, 84, 71, 65, 88};
+		char[] letterGrades;
+		
+		// lets just pass a single array at a time
+		for (int i = 0; i < 2; i++) {
+			
+			if (i == 0) {
+				
+				System.out.println("Class 1 Grades");
+				System.out.println("--------------------------------------");
+				System.out.println("Student		Grade	LetterGrade");
+				System.out.println("--------------------------------------");
+				
+				grades = gradesClass1;
+				processGrades(grades);
+				
+				System.out.println(" ");
+				System.out.println(" ");
+				
+				
+			} else {
+				
+				System.out.println("Class 2 Grades");
+				System.out.println("--------------------------------------");
+				System.out.println("Student		Grade	LetterGrade");
+				System.out.println("--------------------------------------");
+				
+				grades = gradesClass2;
+				processGrades(grades);
+				
+			} // if/else statement
+			
+		} //for statement
+		
+		
+		
+		Dog[] dogArray = new Dog[5];
 		
 		
 	} //main
@@ -29,22 +63,74 @@ public class HoltNoahAssignment8 {
 		
 		
 		
+		//displayGrades(grades);
+		
+		System.out.println("Highest Grade = " + highestGrade(grades));
+		System.out.println("Average grade = " + averageGrade(grades));
+		
+		//letterGrade(grades);
+		
 	} //processGrades
 	
 	public static int highestGrade(int[] grades) {
 		
+		int highestGrade = 0;
 		
+		for (int h = 0; h < grades.length; h ++) {
+			
+			if (grades[h] > highestGrade) {
+				
+				highestGrade = grades[h];
+			
+			} //if
+			
+		} // for loop
+		
+		return highestGrade;
 		
 	} //highestGrade
 	
 	public static double averageGrade (int[] grades) {
 		
+		int allGrades = 0;
 		
+		for (int a = 0; a < grades.length; a++) {
+			
+			allGrades = allGrades + grades[a];
+			
+		} //for loop
 		
+		double averageGrade = allGrades / grades.length;
+		return averageGrade;
 	} //averageGrade
 	
 	public static void letterGrade(int[] grades, char[] letterGrades, int highestGrade) {
 		
+		for (int l = 0; l < grades.length; l ++) {
+			
+			if (grades[l] >= (highestGrade - 10)) {
+				
+				letterGrades[l] = 'A';
+				
+			} else if (grades[l] >= (highestGrade - 20)) {
+				
+				letterGrades[l] = 'B';
+				
+			} else if (grades[l] >= (highestGrade - 30)) {
+				
+				letterGrades[l] = 'C';
+				
+			} else if (grades[l] >= (highestGrade - 40)) {
+				
+				letterGrades[l] = 'D';
+				
+			} else {
+				
+				letterGrades[l] = 'F';
+				
+			}
+			
+		} //for loop
 		
 		
 	} // letterGrade
@@ -97,3 +183,4 @@ class Dog {
 	} //setBark
 	
 } // dog
+
