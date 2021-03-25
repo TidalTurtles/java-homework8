@@ -18,7 +18,7 @@ public class HoltNoahAssignment8 {
 		// starting variables and arrays
 		int[] grades;
 		int[] gradesClass1 = {40, 55, 70, 58, 82};
-		int[] gradesClass2 = {91, 76, 68, 94, 84, 71, 65, 88};
+		int[] gradesClass2 = {91, 76, 68, 89, 94, 84, 71, 65, 88};
 		char[] letterGrades;
 		
 		// lets just pass a single array at a time
@@ -32,7 +32,8 @@ public class HoltNoahAssignment8 {
 				System.out.println("--------------------------------------");
 				
 				grades = gradesClass1;
-				processGrades(grades);
+				letterGrades = new char[grades.length];
+				processGrades(grades, letterGrades);
 				
 				System.out.println(" ");
 				System.out.println(" ");
@@ -46,7 +47,8 @@ public class HoltNoahAssignment8 {
 				System.out.println("--------------------------------------");
 				
 				grades = gradesClass2;
-				processGrades(grades);
+				letterGrades = new char[grades.length];
+				processGrades(grades, letterGrades);
 				
 			} // if/else statement
 			
@@ -54,21 +56,23 @@ public class HoltNoahAssignment8 {
 		
 		
 		
-		Dog[] dogArray = new Dog[5];
+		//Dog[] dogArray = new Dog[5];
 		
 		
 	} //main
 	
-	public static void processGrades(int[] grades) {
+	public static void processGrades(int[] grades, char[] letterGrades) {
+		
+		int peakGrade = highestGrade(grades);
+		double normGrade = averageGrade(grades);
+		
+		letterAssignment(grades, letterGrades, peakGrade);
+		displayGrades(grades, letterGrades, peakGrade, normGrade);
+		
+		System.out.println("Highest Grade = " + peakGrade);
+		System.out.println("Average grade = " + normGrade);
 		
 		
-		
-		//displayGrades(grades);
-		
-		System.out.println("Highest Grade = " + highestGrade(grades));
-		System.out.println("Average grade = " + averageGrade(grades));
-		
-		//letterGrade(grades);
 		
 	} //processGrades
 	
@@ -104,7 +108,7 @@ public class HoltNoahAssignment8 {
 		return averageGrade;
 	} //averageGrade
 	
-	public static void letterGrade(int[] grades, char[] letterGrades, int highestGrade) {
+	public static void letterAssignment(int[] grades, char[] letterGrades, int highestGrade) {
 		
 		for (int l = 0; l < grades.length; l ++) {
 			
@@ -130,14 +134,19 @@ public class HoltNoahAssignment8 {
 				
 			}
 			
-		} //for loop
+		} // for loop
 		
 		
 	} // letterGrade
 	
 	public static void displayGrades(int[] grades, char[] letterGrades, int highestGrade, double averageGrade) {
 		
-		
+		for (int d = 0; d < grades.length; d++) {
+			
+			int student = d+1;
+			System.out.println(student + "	" + grades[d] + "	" + letterGrades[d]);
+			
+		} // for loop
 		
 	} // displayGrades
 
